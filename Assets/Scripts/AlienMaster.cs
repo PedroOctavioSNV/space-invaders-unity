@@ -14,8 +14,8 @@ public class AlienMaster : MonoBehaviour
     private Vector3 verticalMoveDistance = new Vector3(0, 0.15f, 0);
     private Vector3 motherShipSpawnPos = new Vector3(3.72f, 3.45f, 0);
 
-    private const float MAX_LEFT = -2.5f;
-    private const float MAX_RIGHT = 2.5f;
+    private const float MAX_LEFT = -3.4f;
+    private const float MAX_RIGHT = 3.4f;
     private const float MAX_MOVE_SPEED = 0.02f;
 
     private float moveTimer = 0.01f;

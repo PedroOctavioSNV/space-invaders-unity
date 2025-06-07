@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class Alien : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Refs")]
+    [SerializeField]
+    public GameObject explosionPrefab;
+    public int scoreValue;
 
-    // Update is called once per frame
-    void Update()
+    public void Kill()
     {
-        
+        AlienMaster.allAliens.Remove(gameObject);
+
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }

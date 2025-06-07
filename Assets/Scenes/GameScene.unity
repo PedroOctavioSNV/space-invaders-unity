@@ -535,7 +535,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -854,7 +854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3759285416669086696, guid: 21b929b1b58187440a090b56353ec5eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3759285416669086696, guid: 21b929b1b58187440a090b56353ec5eb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2229,6 +2229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f692603730fdb87468d2655d5f5b1b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipStats:
+    maxHealth: 3
+    currentHealth: 0
+    maxLives: 3
+    currentLives: 3
+    shipSpeed: 3
+    fireRate: 0.5
   bulletPrefab: {fileID: 5406830052215544145, guid: 2dba1ac4485ac734ea00365d3c796fa3, type: 3}
 --- !u!1001 &1982968523
 PrefabInstance:
