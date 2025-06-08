@@ -10,12 +10,15 @@ public class Player : MonoBehaviour
     private GameObject bulletPrefab;
 
     private Vector2 offScreenPos = new Vector2(0, 20f);
-    private Vector2 startPos = new Vector2(0, -4.5f);
+    private Vector2 startPos = new Vector2(0, -4f);
 
     private const float MAX_LEFT = -3.4f;
     private const float MAX_RIGHT = 3.4f;
 
     private bool isShooting;
+
+    private bool moveLeft;
+    private bool moveRight;
 
     private void Start()
     {
@@ -46,6 +49,40 @@ public class Player : MonoBehaviour
             StartCoroutine(Shoot());
         }
 #endif
+
+        if (moveLeft && transform.position.x > MAX_LEFT)
+        {
+            transform.Translate(Vector2.left * Time.deltaTime * shipStats.shipSpeed);
+        }
+
+        if (moveRight && transform.position.x < MAX_RIGHT)
+        {
+            transform.Translate(Vector2.right * Time.deltaTime * shipStats.shipSpeed);
+        }
+    }
+
+    public void LeftButtonDown()
+    {
+        moveLeft = true;
+    }
+
+    public void RightButtonDown()
+    {
+        moveRight = true;
+    }
+
+    public void DirectionReleased()
+    {
+        moveLeft = false;
+        moveRight = false;
+    }
+
+    public void ShootButton()
+    {
+        if (!isShooting)
+        {
+            StartCoroutine(Shoot());
+        }
     }
 
     private IEnumerator Shoot()
