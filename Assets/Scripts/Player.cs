@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
         shipStats.currentLives = shipStats.maxLives;
 
         transform.position = startPos;
+
+        UIManager.UpdateLHealthBar(shipStats.currentHealth);
+        UIManager.UpdateLives(shipStats.currentLives);
     }
 
     private void Update()
@@ -57,10 +60,12 @@ public class Player : MonoBehaviour
     private void TakeDamage()
     {
         shipStats.currentHealth--;
+        UIManager.UpdateLHealthBar(shipStats.currentHealth);
 
         if (shipStats.currentHealth <= 0)
         {
             shipStats.currentLives--;
+            UIManager.UpdateLives(shipStats.currentLives);
 
             if (shipStats.currentLives <= 0)
             {
@@ -90,5 +95,6 @@ public class Player : MonoBehaviour
 
         shipStats.currentHealth = shipStats.maxHealth;
         transform.position = startPos;
+        UIManager.UpdateLHealthBar(shipStats.currentHealth);
     }
 }

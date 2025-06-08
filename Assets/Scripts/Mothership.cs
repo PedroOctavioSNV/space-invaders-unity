@@ -19,6 +19,11 @@ public class Mothership : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("FriendlyBullet"))
+        {
+            UIManager.UpdateScore(scoreValue);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

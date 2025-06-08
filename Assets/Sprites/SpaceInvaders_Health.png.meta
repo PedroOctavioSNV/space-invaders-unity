@@ -124,6 +124,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -133,7 +159,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 80
-        width: 16
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,9 +179,9 @@ TextureImporter:
       name: SpaceInvaders_Health_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 80
-        width: 16
+        x: 0
+        y: 64
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -176,8 +202,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 16
+        y: 48
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,9 +223,9 @@ TextureImporter:
       name: SpaceInvaders_Health_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
+        x: 0
+        y: 32
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -220,8 +246,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 16
+        y: 16
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -241,9 +267,9 @@ TextureImporter:
       name: SpaceInvaders_Health_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
+        x: 0
+        y: 0
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -255,138 +281,6 @@ TextureImporter:
       bones: []
       spriteID: c46f077ee2b6e5890800000000000000
       internalID: -7467413282938096052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpaceInvaders_Health_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b29e1960448cce42a16a79f72ceac1d
-      internalID: -594721267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpaceInvaders_Health_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53e51bbae0d50094997d558f21835391
-      internalID: -714946000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpaceInvaders_Health_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6ebf530c9965304f8742f00d5dd6838
-      internalID: 1562273790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpaceInvaders_Health_9
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cad37b223e2f99c4195a72dd3b425c6f
-      internalID: -1984489111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpaceInvaders_Health_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90c30f57e2a05be49b7b24eb3dadc07e
-      internalID: 1911212349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpaceInvaders_Health_11
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e7d67fce0b192b4180123cd7d78ae04
-      internalID: -518857933
       vertices: []
       indices: 
       edges: []
@@ -407,16 +301,10 @@ TextureImporter:
     nameFileIdTable:
       SpaceInvaders_Health_0: -5513350640364851514
       SpaceInvaders_Health_1: -6437992265152185607
-      SpaceInvaders_Health_10: 1911212349
-      SpaceInvaders_Health_11: -518857933
       SpaceInvaders_Health_2: 396259056645360257
       SpaceInvaders_Health_3: -8889566870884673856
       SpaceInvaders_Health_4: -1598685635086416073
       SpaceInvaders_Health_5: -7467413282938096052
-      SpaceInvaders_Health_6: -594721267
-      SpaceInvaders_Health_7: -714946000
-      SpaceInvaders_Health_8: 1562273790
-      SpaceInvaders_Health_9: -1984489111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
