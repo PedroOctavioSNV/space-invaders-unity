@@ -60,9 +60,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public static void UpdateCoins(int coins)
+    public static void UpdateCoins()
     {
-        //TODO
+        instance.coinsText.text = Inventory.currentCoins.ToString();
     }
 
     public static void UpdateScore(int score)

@@ -134,4 +134,30 @@ public class Player : MonoBehaviour
         transform.position = startPos;
         UIManager.UpdateLHealthBar(shipStats.currentHealth);
     }
+
+    public void AddHealth()
+    {
+        if (shipStats.currentHealth == shipStats.maxHealth)
+        {
+            UIManager.UpdateScore(250);
+        }
+        else
+        {
+            shipStats.currentHealth++;
+            UIManager.UpdateLHealthBar(shipStats.currentHealth);
+        }
+    }
+
+    public void AddLife()
+    {
+        if (shipStats.currentLives == shipStats.maxLives)
+        {
+            UIManager.UpdateScore(1000);
+        }
+        else
+        {
+            shipStats.maxLives++;
+            UIManager.UpdateLives(shipStats.maxLives);
+        }
+    }
 }

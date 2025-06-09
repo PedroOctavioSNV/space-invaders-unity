@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: a3756880bbf8c534cb55f844214707cf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - explosionPrefab: {fileID: 8414835975425793120, guid: 8a62c5409ede1654ca296f2f6e801332, type: 3}
+  - coinPrefab: {fileID: 4759141542037425326, guid: 1f9f06860356886459e99b4a374b0c42, type: 3}
+  - lifePrefab: {fileID: 6062844614678380424, guid: edaac4c34e70d6843a8834ec853301a2, type: 3}
+  - healthPrefab: {fileID: 7699337247016970429, guid: c5bd06745e410e944a11e73775180736, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
