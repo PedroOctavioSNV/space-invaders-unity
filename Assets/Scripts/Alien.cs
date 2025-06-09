@@ -15,6 +15,11 @@ public class Alien : MonoBehaviour
 
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
+        if (AlienMaster.allAliens.Count == 0)
+        {
+            GameManager.SpawNewWave();
+        }
+
         Destroy(gameObject);
     }
 }
