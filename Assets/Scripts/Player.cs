@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     [Header("Refs")]
     [SerializeField]
-    private ShipStats shipStats;
+    public ShipStats shipStats;
     [SerializeField]
     private GameObject bulletPrefab;
 
@@ -107,6 +107,7 @@ public class Player : MonoBehaviour
             if (shipStats.currentLives <= 0)
             {
                 // Game Over
+                SaveManager.SaveProgress();
             }
             else
             {

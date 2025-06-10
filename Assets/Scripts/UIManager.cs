@@ -71,9 +71,18 @@ public class UIManager : MonoBehaviour
         instance.scoreText.text = instance.score.ToString("000,000");
     }
 
-    public static void UpdateHighscore()
+    public static int GetHighScore()
     {
-        //TODO
+        return instance.highScore;
+    }
+
+    public static void UpdateHighscore(int highScore)
+    {
+        if (instance.highScore < highScore)
+        {
+            instance.highScore = highScore;
+            instance.highScoreText.text = instance.highScore.ToString("000,000");
+        }
     }
 
     public static void UpdateWave()
