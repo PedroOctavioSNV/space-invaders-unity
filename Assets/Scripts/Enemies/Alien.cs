@@ -41,6 +41,8 @@ public class Alien : MonoBehaviour
 
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
+        AudioManager.UpdateBattleMusicDelay(AlienMaster.allAliens.Count);
+
         if (AlienMaster.allAliens.Count == 0)
         {
             GameManager.SpawNewWave();

@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public ShipStats shipStats;
     [SerializeField]
     private GameObject bulletPrefab;
+    [SerializeField]
+    private AudioClip shootSFX;
 
     private Vector2 offScreenPos = new Vector2(0, 20f);
     private Vector2 startPos = new Vector2(0, -4f);
@@ -89,6 +91,7 @@ public class Player : MonoBehaviour
     {
         isShooting = true;
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        AudioManager.PlaySoundEffect(shootSFX);
 
         yield return new WaitForSeconds(shipStats.fireRate);
         isShooting = false;

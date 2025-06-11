@@ -38,10 +38,13 @@ public class GameManager : MonoBehaviour
         }
 
         UIManager.ResetUI();
+        AudioManager.StopBattleMusic();
     }
 
     private IEnumerator SpawnWave()
     {
+        AudioManager.UpdateBattleMusicDelay(1);
+        AudioManager.StopBattleMusic();
         AlienMaster.allAliens.Clear();
 
         if (currentSet != null)
@@ -53,5 +56,6 @@ public class GameManager : MonoBehaviour
 
         currentSet = Instantiate(allAlienSets[Random.Range(0, allAlienSets.Length)], spawnPosition, Quaternion.identity);
         UIManager.UpdateWave();
+        AudioManager.PlayBattleMusic();
     }
 }
