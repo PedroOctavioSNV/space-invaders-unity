@@ -27,7 +27,9 @@ public class SaveManager : MonoBehaviour
 
         saveObject.coins = Inventory.currentCoins;
         saveObject.highscore = UIManager.GetHighScore();
-        saveObject.shipStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().shipStats = saveObject.shipStats;
+        saveObject.shipStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().shipStats;
+
+        SaveLoad.SaveState(saveObject);
     }
 
     public static void LoadProgress()

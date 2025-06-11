@@ -39,9 +39,12 @@ public static class SaveLoad
             {
                 Debug.LogWarning("Failed to load save!");
             }
+        } else
+        {
+            SaveState(saveObject);
         }
 
-        return saveObject;
+            return saveObject;
     }
 
     private static bool SaveExists()

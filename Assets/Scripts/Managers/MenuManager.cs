@@ -36,6 +36,11 @@ public class MenuManager : MonoBehaviour
     public void showInGameUI()
     {
         Time.timeScale = 1;
+        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player.shipStats.currentHealth = player.shipStats.maxHealth;
+        player.shipStats.currentLives = player.shipStats.maxLives;
+
+        UIManager.UpdateLHealthBar(player.shipStats.currentHealth);
 
         instance.mainMenu.SetActive(false);
         instance.pauseMenu.SetActive(false);
