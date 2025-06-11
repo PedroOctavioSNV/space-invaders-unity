@@ -90,4 +90,12 @@ public class UIManager : MonoBehaviour
         instance.wave++;
         instance.waveText.text = instance.wave.ToString();
     }
+
+    public static void ResetUI()
+    {
+        instance.score = 0;
+        instance.wave = 0;
+        instance.scoreText.text = instance.score.ToString("000,000");
+        instance.waveText.text = instance.wave.ToString();
+    }
 }

@@ -28,35 +28,62 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public static void showInGameUI()
+    private void Start()
     {
+        ReturnToMainMenu();
+    }
+
+    public void showInGameUI()
+    {
+        Time.timeScale = 1;
+
         instance.mainMenu.SetActive(false);
         instance.pauseMenu.SetActive(false);
         instance.shopMenu.SetActive(false);
         instance.gameOverMenu.SetActive(false);
 
         instance.inGameUI.SetActive(true);
+
+        GameManager.SpawNewWave();
     }
 
-    public static void OpenMainMenu()
+    public void OpenMainMenu()
     {
         instance.inGameUI.SetActive(false);
 
         instance.mainMenu.SetActive(true);
     }
 
-    public static void OpenPause()
+    public void OpenPause()
     {
+        Time.timeScale = 0;
+
         instance.inGameUI.SetActive(false);
 
         instance.pauseMenu.SetActive(true);
     }
 
-    public static void OpenShop()
+    public void ClosePause()
+    {
+        Time.timeScale = 1;
+
+        instance.pauseMenu.SetActive(false);
+
+        instance.inGameUI.SetActive(true);
+    }
+
+    public void OpenShop()
     {
         instance.mainMenu.SetActive(false);
 
         instance.shopMenu.SetActive(true);
+    }
+
+    public void CloseShop()
+    {
+        instance.shopMenu.SetActive(false);
+
+        instance.mainMenu.SetActive(true);
     }
 
     public static void OpenGameOver()
@@ -66,18 +93,16 @@ public class MenuManager : MonoBehaviour
         instance.gameOverMenu.SetActive(true);
     }
 
-    public static void ReturnToMainMenu()
+    public void ReturnToMainMenu()
     {
+        Time.timeScale = 1;
+
         instance.inGameUI.SetActive(false);
         instance.pauseMenu.SetActive(false);
         instance.shopMenu.SetActive(false);
         instance.gameOverMenu.SetActive(false);
 
         instance.mainMenu.SetActive(true);
-    }
-
-    public static void CloseWindow(GameObject gameObject)
-    {
-
+        GameManager.CancelGame();
     }
 }

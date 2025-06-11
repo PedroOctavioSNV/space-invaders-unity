@@ -23,18 +23,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        SpawNewWave();
-    }
-
     public static void SpawNewWave()
     {
         instance.StartCoroutine(instance.SpawnWave());
     }
 
+    public static void CancelGame()
+    {
+        instance.StopAllCoroutines();
+        AlienMaster.allAliens.Clear();
+        if (instance.currentSet != null)
+        {
+            Destroy(instance.currentSet);
+        }
+
+        UIManager.ResetUI();
+    }
+
     private IEnumerator SpawnWave()
     {
+        AlienMaster.allAliens.Clear();
+
         if (currentSet != null)
         {
             Destroy(currentSet);
