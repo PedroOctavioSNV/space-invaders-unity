@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject[] allAlienSets;
 
+    public GameObject shieldPrefab;
+    private Vector2 middleShieldPos = new Vector2(0, -3);
+    private Vector2 rightShieldPos = new Vector2(2.25f, -3);
+    private Vector2 leftShieldPos = new Vector2(-2.25f, -3);
+
     private void Awake()
     {
         if (instance == null)
@@ -57,5 +62,19 @@ public class GameManager : MonoBehaviour
         currentSet = Instantiate(allAlienSets[Random.Range(0, allAlienSets.Length)], spawnPosition, Quaternion.identity);
         UIManager.UpdateWave();
         AudioManager.PlayBattleMusic();
+    }
+
+    public static void ResetShield()
+    {
+        GameObject[] currentShields = GameObject.FindGameObjectsWithTag("Shield");
+
+        foreach (GameObject shield in currentShields)
+        {
+            Destroy(shield);
+        }
+
+        Instantiate(instance.shieldPrefab, instance.middleShieldPos, Quaternion.identity);
+        Instantiate(instance.shieldPrefab, instance.rightShieldPos, Quaternion.identity);
+        Instantiate(instance.shieldPrefab, instance.leftShieldPos, Quaternion.identity);
     }
 }
