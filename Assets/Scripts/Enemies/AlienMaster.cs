@@ -10,14 +10,15 @@ public class AlienMaster : MonoBehaviour
     [SerializeField]
     private GameObject mothershipPrefab;
 
-    private Vector3 horizontalMoveDistance = new Vector3(0.05f, 0, 0);
-    private Vector3 verticalMoveDistance = new Vector3(0, 0.15f, 0);
-    private Vector3 motherShipSpawnPos = new Vector3(3.72f, 3.45f, 0);
+    private Vector3 horizontalMoveDistance = new Vector3(0.1f, 0, 0);
+    private Vector3 verticalMoveDistance = new Vector3(0, 0.25f, 0);
+    private Vector3 motherShipSpawnPos = new Vector3(3.72f, 4.5f, 0);
 
     private const float MAX_LEFT = -3.4f;
     private const float MAX_RIGHT = 3.4f;
     private const float MAX_MOVE_SPEED = 0.02f;
     private const float START_Y = 0.35f;
+    private const float GAMEOVER_Y = -3.5f;
 
     private float moveTimer = 0.01f;
     private const float moveMultiplier = 0.005f;
@@ -82,6 +83,7 @@ public class AlienMaster : MonoBehaviour
         {
 
             int hitMax = 0;
+            int gameOverY = 0;
 
             for (int i = 0; i < allAliens.Count; i++)
             {
@@ -98,6 +100,11 @@ public class AlienMaster : MonoBehaviour
                 {
                     hitMax++;
                 }
+
+                if (allAliens[i].transform.position.y < GAMEOVER_Y)
+                {
+                    gameOverY++;
+                }
             }
 
             if (hitMax > 0)
@@ -108,6 +115,12 @@ public class AlienMaster : MonoBehaviour
                 }
 
                 movingRight = !movingRight;
+            }
+
+            if (gameOverY > 0)
+            {
+                // Game Over
+                MenuManager.OpenGameOver();
             }
 
             moveTimer = GetMoveSpeed();

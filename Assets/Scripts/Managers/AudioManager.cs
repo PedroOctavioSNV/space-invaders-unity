@@ -54,6 +54,10 @@ public class AudioManager : MonoBehaviour
         {
             AudioListener.pause = true;
         }
+        else
+        {
+            AudioListener.pause = false;
+        }
     }
 
     public static void PlayBattleMusic()

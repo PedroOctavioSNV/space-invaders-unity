@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private AudioClip shootSFX;
 
     private Vector2 offScreenPos = new Vector2(0, 20f);
-    private Vector2 startPos = new Vector2(0, -4f);
+    private Vector2 startPos = new Vector2(0, -5f);
 
     private const float MAX_LEFT = -3.4f;
     private const float MAX_RIGHT = 3.4f;

@@ -2306,7 +2306,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3767,7 +3767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3759285416669086696, guid: 21b929b1b58187440a090b56353ec5eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3759285416669086696, guid: 21b929b1b58187440a090b56353ec5eb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4955,7 +4955,7 @@ Transform:
   m_GameObject: {fileID: 1135779490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6667,7 +6667,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1601942513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 630104458}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OpenX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1601942513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7597,7 +7609,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1792218123}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 112670115}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: ToogleMute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1792218123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7932,7 +7956,6 @@ MonoBehaviour:
     currentLives: 3
     shipSpeed: 3
     fireRate: 1
-    coins: 0
   bulletPrefab: {fileID: 5406830052215544145, guid: 2dba1ac4485ac734ea00365d3c796fa3, type: 3}
   shootSFX: {fileID: 8300000, guid: d9813e8534c9f2f44aa7392e9699cf6c, type: 3}
 --- !u!1 &1956357259

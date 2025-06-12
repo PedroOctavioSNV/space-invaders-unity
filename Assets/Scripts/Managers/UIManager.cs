@@ -85,6 +85,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public static void HighScoreCheck()
+    {
+        if (instance.highScore < instance.score)
+        {
+            UpdateHighscore(instance.score);
+            SaveManager.SaveProgress();
+        }
+    }
+
     public static void UpdateWave()
     {
         instance.wave++;

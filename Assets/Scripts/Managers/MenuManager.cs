@@ -93,6 +93,9 @@ public class MenuManager : MonoBehaviour
 
     public static void OpenGameOver()
     {
+        Time.timeScale = 0;
+        UIManager.HighScoreCheck();
+
         instance.inGameUI.SetActive(false);
 
         instance.gameOverMenu.SetActive(true);
@@ -109,5 +112,10 @@ public class MenuManager : MonoBehaviour
 
         instance.mainMenu.SetActive(true);
         GameManager.CancelGame();
+    }
+
+    public void OpenX()
+    {
+        Application.OpenURL("https://x.com/PedroOctavioSNV");
     }
 }
