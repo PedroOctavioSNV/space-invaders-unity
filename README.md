@@ -23,7 +23,7 @@ No installation required—just jump in and play.
 
 ## 🎮 Controls
 
-- **Move**: W / S keys.  
+- **Move**: A / D keys.  
 - **Shoot**: Spacebar
 
 ---
