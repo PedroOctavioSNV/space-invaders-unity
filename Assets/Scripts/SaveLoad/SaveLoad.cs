@@ -10,22 +10,40 @@ public static class SaveLoad
 
     public static void SaveState(SaveObject saveObject)
     {
+#if UNITY_WEBGL
+        string json = JsonUtility.ToJson(saveObject);
+        PlayerPrefs.SetString("SaveData", json);
+        PlayerPrefs.Save();
+
+#elif UNITY_STANDALONE || UNITY_EDITOR
         if (!DirectoryExists())
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/" + directoryName);
+            Directory.CreateDirectory(GetSaveDirectory());
         }
 
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(GetSavePath());
         bf.Serialize(file, saveObject);
         file.Close();
-
+#endif
     }
 
     public static SaveObject LoadState()
     {
         SaveObject saveObject = new SaveObject();
 
+#if UNITY_WEBGL
+        if (PlayerPrefs.HasKey("SaveData"))
+        {
+            string json = PlayerPrefs.GetString("SaveData");
+            saveObject = JsonUtility.FromJson<SaveObject>(json);
+        }
+        else
+        {
+            SaveState(saveObject);
+        }
+
+#elif UNITY_STANDALONE || UNITY_EDITOR
         if (SaveExists())
         {
             try
@@ -39,14 +57,17 @@ public static class SaveLoad
             {
                 Debug.LogWarning("Failed to load save!");
             }
-        } else
+        }
+        else
         {
             SaveState(saveObject);
         }
+#endif
 
-            return saveObject;
+        return saveObject;
     }
 
+#if UNITY_STANDALONE || UNITY_EDITOR
     private static bool SaveExists()
     {
         return File.Exists(GetSavePath());
@@ -54,11 +75,17 @@ public static class SaveLoad
 
     private static bool DirectoryExists()
     {
-        return Directory.Exists(Application.persistentDataPath + "/" + directoryName);
+        return Directory.Exists(GetSaveDirectory());
+    }
+
+    private static string GetSaveDirectory()
+    {
+        return Path.Combine(Application.persistentDataPath, directoryName);
     }
 
     private static string GetSavePath()
     {
-        return Application.persistentDataPath + "/" + directoryName + "/" + fileName;
+        return Path.Combine(GetSaveDirectory(), fileName);
     }
+#endif
 }
