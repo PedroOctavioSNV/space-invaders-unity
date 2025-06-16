@@ -37,5 +37,5 @@ No installation required—just jump in and play.
 
 ## 🙌 Acknowledgements
 
-Inspired by the original **Space Invaders** arcade game. </br>
+Inspired by the original **Space Invaders** arcade game by Taito. </br>
 Redesigned and remade as a personal project to sharpen Unity and C# skills.
