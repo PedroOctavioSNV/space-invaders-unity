@@ -16,7 +16,7 @@ Built in Unity as a minimalist portfolio piece, this remake reimagines Space Inv
 
 ## ▶️ Play Now
 
-Play **SpaceBlaster** directly in your browser or download it on [Itch.io]([https://your-itch-link-here](https://pedrooctaviosnv.itch.io/invadurs-attack). </br>
+Play **SpaceBlaster** directly in your browser or download it on [Itch.io](https://pedrooctaviosnv.itch.io/invadurs-attack). </br>
 No installation required—just jump in and play.
 
 ---
