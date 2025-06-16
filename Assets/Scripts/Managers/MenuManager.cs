@@ -41,7 +41,8 @@ public class MenuManager : MonoBehaviour
         player.shipStats.currentHealth = player.shipStats.maxHealth;
         player.shipStats.currentLives = player.shipStats.maxLives;
 
-        UIManager.UpdateLHealthBar(player.shipStats.currentHealth);
+        UIManager.UpdateHealthBar(player.shipStats.currentHealth);
+        UIManager.UpdateCoins();
 
         instance.mainMenu.SetActive(false);
         instance.pauseMenu.SetActive(false);

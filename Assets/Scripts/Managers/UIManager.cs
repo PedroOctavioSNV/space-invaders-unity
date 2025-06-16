@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviour
 
     private int score;
     private int highScore;
-    private int coins;
     private int wave;
 
     private Color32 active = new Color(1, 1, 1, 1);
@@ -42,7 +41,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public static void UpdateLHealthBar(int health)
+    public static void UpdateHealthBar(int health)
     {
         instance.healthBar.sprite = instance.healthBars[health];
     }

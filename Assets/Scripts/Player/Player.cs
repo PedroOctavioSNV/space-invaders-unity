@@ -29,13 +29,12 @@ public class Player : MonoBehaviour
 
         transform.position = startPos;
 
-        UIManager.UpdateLHealthBar(shipStats.currentHealth);
+        UIManager.UpdateHealthBar(shipStats.currentHealth);
         UIManager.UpdateLives(shipStats.currentLives);
     }
 
     private void Update()
     {
-#if UNITY_EDITOR
         if (Input.GetKey(KeyCode.A) && transform.position.x > MAX_LEFT)
         {
             transform.Translate(Vector2.left * Time.deltaTime * shipStats.shipSpeed);
@@ -50,7 +49,6 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(Shoot());
         }
-#endif
 
         if (moveLeft && transform.position.x > MAX_LEFT)
         {
@@ -100,7 +98,7 @@ public class Player : MonoBehaviour
     private void TakeDamage()
     {
         shipStats.currentHealth--;
-        UIManager.UpdateLHealthBar(shipStats.currentHealth);
+        UIManager.UpdateHealthBar(shipStats.currentHealth);
 
         if (shipStats.currentHealth <= 0)
         {
@@ -136,7 +134,7 @@ public class Player : MonoBehaviour
 
         shipStats.currentHealth = shipStats.maxHealth;
         transform.position = startPos;
-        UIManager.UpdateLHealthBar(shipStats.currentHealth);
+        UIManager.UpdateHealthBar(shipStats.currentHealth);
     }
 
     public void AddHealth()
@@ -148,7 +146,7 @@ public class Player : MonoBehaviour
         else
         {
             shipStats.currentHealth++;
-            UIManager.UpdateLHealthBar(shipStats.currentHealth);
+            UIManager.UpdateHealthBar(shipStats.currentHealth);
         }
     }
 

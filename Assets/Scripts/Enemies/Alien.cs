@@ -1,43 +1,32 @@
 using UnityEngine;
+using System.Collections.Generic;
+
+[System.Serializable]
+public struct PickupDrop
+{
+    public GameObject prefab;
+    [Range(0, 100)]
+    public int dropChance; // chance em porcentagem
+    public string name; // apenas para organização no Inspector
+}
 
 public class Alien : MonoBehaviour
 {
-    [Header("Refs")]
-    [SerializeField]
-    private GameObject explosionPrefab;
-    [SerializeField]
-    private GameObject coinPrefab;
-    [SerializeField]
-    private GameObject lifePrefab;
-    [SerializeField]
-    private GameObject healthPrefab;
-    [SerializeField]
-    private int scoreValue;
+    [Header("References")]
+    [SerializeField] private GameObject explosionPrefab;
 
-    private const int LIFE_CHANCE = 1;
-    private const int HEALTH_CHANCE = 10;
-    private const int COIN_CHANCE = 50;
+    [Header("Drop Settings")]
+    [SerializeField] private List<PickupDrop> pickupDrops;
+
+    [Header("Score Settings")]
+    [SerializeField] private int scoreValue;
 
     public void Kill()
     {
         UIManager.UpdateScore(scoreValue);
-
         AlienMaster.allAliens.Remove(gameObject);
 
-        int random = Random.Range(0, 1000);
-
-        if (random == LIFE_CHANCE)
-        {
-            Instantiate(lifePrefab, transform.position, Quaternion.identity);
-        }
-        else if (random <= HEALTH_CHANCE)
-        {
-            Instantiate(healthPrefab, transform.position, Quaternion.identity);
-        }
-        else if (random <= COIN_CHANCE)
-        {
-            Instantiate(coinPrefab, transform.position, Quaternion.identity);
-        }
+        TryDropPickup();
 
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
@@ -49,5 +38,19 @@ public class Alien : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private void TryDropPickup()
+    {
+        int roll = Random.Range(0, 100);
+
+        foreach (var drop in pickupDrops)
+        {
+            if (roll < drop.dropChance)
+            {
+                Instantiate(drop.prefab, transform.position, Quaternion.identity);
+                return; // drop apenas um item
+            }
+        }
     }
 }
